@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="사주, 타로, 꿈해몽, 로또번호 추천을 브라우저에서만 안전하게 제공하는 정적 웹사이트입니다. 개인정보 수집 없음."
+    />
+    <title>운세 & 예언 스튜디오</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <div class="brand">
+          <span class="brand-mark">✦</span>
+          <span>운세 & 예언 스튜디오</span>
+        </div>
+        <nav class="nav">
+          <a href="#saju">사주</a>
+          <a href="#tarot">타로</a>
+          <a href="#dream">꿈해몽</a>
+          <a href="#lotto">로또</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">개인정보 수집 없음 · 브라우저 로컬 계산</p>
+          <h1>오늘의 운세와 예언을 안전하게 확인해보세요.</h1>
+          <p>
+            사주, 타로, 꿈해몽, 로또 번호 추천을 모두 브라우저에서만 처리합니다.
+            서버 저장, 로그 기록, 쿠키 추적, 설문 수집을 하지 않습니다.
+          </p>
+          <div class="cta-row">
+            <a href="#saju" class="primary-btn">지금 시작</a>
+            <a href="#privacy" class="secondary-btn">개인정보 보호 정책</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="mini-strip">
+            <span>오늘의 키워드</span>
+            <strong>신뢰 · 전환 · 기회</strong>
+          </div>
+          <div class="mini-strip">
+            <span>추천 포인트</span>
+            <strong>작은 결정이 큰 흐름을 만듭니다.</strong>
+          </div>
+          <div class="mini-strip">
+            <span>운세 상태</span>
+            <strong>좋음</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="ad-wrap container">
+        <div class="ad-box">
+          <span class="ad-label">AdSense 광고 배너 영역</span>
+          <p>승인 후 Google AdSense 코드로 교체하세요.</p>
+        </div>
+      </section>
+
+      <section id="saju" class="container feature-layout">
+        <div class="panel left-panel">
+          <div class="section-header">
+            <span class="badge">사주</span>
+            <h2>사주 계산기</h2>
+          </div>
+
+          <div class="input-grid">
+            <label>
+              <span>생년</span>
+              <input id="year" type="number" min="1900" max="2100" value="1995" />
+            </label>
+            <label>
+              <span>생월</span>
+              <input id="month" type="number" min="1" max="12" value="6" />
+            </label>
+            <label>
+              <span>생일</span>
+              <input id="day" type="number" min="1" max="31" value="15" />
+            </label>
+            <label>
+              <span>생시</span>
+              <select id="hour">
+                <option value="0">자시 (00:00~00:59)</option>
+                <option value="1">축시 (01:00~01:59)</option>
+                <option value="2">인시 (02:00~02:59)</option>
+                <option value="3">묘시 (03:00~03:59)</option>
+                <option value="4">진시 (04:00~04:59)</option>
+                <option value="5">사시 (05:00~05:59)</option>
+                <option value="6">오시 (06:00~06:59)</option>
+                <option value="7">미시 (07:00~07:59)</option>
+                <option value="8">신시 (08:00~08:59)</option>
+                <option value="9">유시 (09:00~09:59)</option>
+                <option value="10">술시 (10:00~10:59)</option>
+                <option value="11">해시 (11:00~11:59)</option>
+                <option value="12">자시 (12:00~12:59)</option>
+                <option value="13">축시 (13:00~13:59)</option>
+                <option value="14">인시 (14:00~14:59)</option>
+                <option value="15">묘시 (15:00~15:59)</option>
+                <option value="16">진시 (16:00~16:59)</option>
+                <option value="17">사시 (17:00~17:59)</option>
+                <option value="18">오시 (18:00~18:59)</option>
+                <option value="19">미시 (19:00~19:59)</option>
+                <option value="20">신시 (20:00~20:59)</option>
+                <option value="21">유시 (21:00~21:59)</option>
+                <option value="22">술시 (22:00~22:59)</option>
+                <option value="23">해시 (23:00~23:59)</option>
+              </select>
+            </label>
+          </div>
+
+          <button id="sajuBtn" class="action-btn">사주 계산</button>
+        </div>
+
+        <div class="panel result-panel">
+          <div class="section-header compact">
+            <span class="badge alt">결과</span>
+          </div>
+          <div class="pillar-grid">
+            <div class="pillar">
+              <span>년주</span>
+              <strong id="yearPillar">-</strong>
+            </div>
+            <div class="pillar">
+              <span>월주</span>
+              <strong id="monthPillar">-</strong>
+            </div>
+            <div class="pillar">
+              <span>일주</span>
+              <strong id="dayPillar">-</strong>
+            </div>
+            <div class="pillar">
+              <span>시주</span>
+              <strong id="hourPillar">-</strong>
+            </div>
+          </div>
+          <div class="summary-boxes">
+            <div>
+              <small>오행</small>
+              <strong id="sajuElement">-</strong>
+            </div>
+            <div>
+              <small>성향</small>
+              <strong id="sajuTrait">-</strong>
+            </div>
+            <div>
+              <small>운세</small>
+              <strong id="sajuFortune">-</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tarot" class="container feature-layout">
+        <div class="panel left-panel">
+          <div class="section-header">
+            <span class="badge">타로</span>
+            <h2>3장 타로 뽑기</h2>
+          </div>
+
+          <p class="muted-text">
+            과거 · 현재 · 미래의 흐름을 한 번에 확인할 수 있는 3장 스프레드입니다.
+          </p>
+
+          <button id="drawTarotBtn" class="action-btn">카드 뽑기</button>
+        </div>
+
+        <div class="panel result-panel">
+          <div class="tarot-grid">
+            <div class="tarot-card" id="tarotPast">
+              <span>과거</span>
+              <strong>?</strong>
+              <small>카드를 뽑아보세요</small>
+            </div>
+            <div class="tarot-card" id="tarotPresent">
+              <span>현재</span>
+              <strong>?</strong>
+              <small>카드를 뽑아보세요</small>
+            </div>
+            <div class="tarot-card" id="tarotFuture">
+              <span>미래</span>
+              <strong>?</strong>
+              <small>카드를 뽑아보세요</small>
+            </div>
+          </div>
+
+          <div class="reading-box" id="tarotReading">
+            카드가 뽑히면 해석이 여기에 표시됩니다.
+          </div>
+        </div>
+      </section>
+
+      <section id="dream" class="container feature-layout">
+        <div class="panel left-panel">
+          <div class="section-header">
+            <span class="badge">꿈해몽</span>
+            <h2>꿈 해석 생성기</h2>
+          </div>
+
+          <textarea id="dreamInput" rows="7" placeholder="예: 비행기를 타고 하늘을 나는 꿈을 꾸었어요."></textarea>
+          <button id="dreamBtn" class="action-btn">해석하기</button>
+        </div>
+
+        <div class="panel result-panel">
+          <div class="reading-box large" id="dreamResult">
+            꿈 내용을 입력하고 해석을 확인해보세요.
+          </div>
+        </div>
+      </section>
+
+      <section id="lotto" class="container feature-layout">
+        <div class="panel left-panel">
+          <div class="section-header">
+            <span class="badge">로또</span>
+            <h2>로또 번호 추천</h2>
+          </div>
+
+          <p class="muted-text">
+            무작위 조합을 기준으로 번호를 뽑아드립니다. 게임 결과를 보장하지는 않습니다.
+          </p>
+
+          <button id="lottoBtn" class="action-btn">숫자 뽑기</button>
+        </div>
+
+        <div class="panel result-panel">
+          <div class="lotto-box">
+            <div class="lotto-row" id="lottoNumbers">-</div>
+            <div class="lotto-note">
+              보너스 번호: <strong id="bonusNumber">-</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="container info-section">
+        <div class="panel policy-box">
+          <div class="section-header">
+            <span class="badge">안전 원칙</span>
+            <h2>개인정보 수집 없음</h2>
+          </div>
+          <ul>
+            <li>이 서비스는 사용자의 입력을 서버로 전송하지 않습니다.</li>
+            <li>로컬 브라우저에서만 계산하고 결과를 화면에 표시합니다.</li>
+            <li>쿠키, 로컬스토리지, 로그, DB 저장을 하지 않습니다.</li>
+            <li>광고 수익화는 Google AdSense 승인을 받은 뒤 광고 코드를 추가하는 방식으로 운영합니다.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="ad-wrap container">
+        <div class="ad-box">
+          <span class="ad-label">중앙 광고 영역</span>
+          <p>AdSense 승인 후 본 영역에 광고 코드를 삽입하세요.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 운세 & 예언 스튜디오</p>
+        <p>개인정보를 수집하지 않는 정적 서비스</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

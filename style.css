@@ -1,0 +1,496 @@
+:root {
+  --bg: #0f172a;
+  --bg-soft: #111b2f;
+  --panel: rgba(17, 27, 47, 0.96);
+  --panel-2: rgba(26, 37, 60, 0.98);
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #edf4ff;
+  --muted: #b8c7df;
+  --gold: #ffd684;
+  --gold-strong: #ffc857;
+  --purple: #b98cff;
+  --blue: #87d8ff;
+  --pink: #ff8ebd;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(135, 216, 255, 0.15), transparent 28%),
+    linear-gradient(180deg, #0b1220 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: rgba(11, 18, 32, 0.8);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.brand-mark {
+  color: var(--gold);
+  font-size: 1.4rem;
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.96rem;
+}
+
+.nav a:hover {
+  color: var(--white);
+}
+
+.page {
+  padding-bottom: 60px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+  padding: 60px 0 30px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin-bottom: 16px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.06;
+  margin: 0 0 18px;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy p {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn,
+.action-btn {
+  display: inline-block;
+  border: 0;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 0.95rem 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primary-btn,
+.action-btn {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-strong) 100%);
+  color: #171717;
+  box-shadow: 0 12px 30px rgba(255, 200, 87, 0.18);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.hero-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.mini-strip {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mini-strip span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.mini-strip strong {
+  font-size: 1.05rem;
+}
+
+.feature-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  padding-top: 30px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 18px 45px var(--shadow);
+}
+
+.left-panel {
+  padding: 24px 22px;
+}
+
+.result-panel {
+  padding: 24px 22px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.section-header.compact {
+  margin-bottom: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #171717;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+}
+
+.badge.alt {
+  background: linear-gradient(135deg, var(--pink), var(--gold));
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  letter-spacing: -0.05em;
+}
+
+.input-grid {
+  display: grid;
+  gap: 16px;
+}
+
+label span {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 130px;
+  margin-top: 8px;
+}
+
+.action-btn {
+  width: 100%;
+  margin-top: 18px;
+  font-size: 1rem;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.pillar {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 12px;
+  text-align: center;
+}
+
+.pillar span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.pillar strong {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+.summary-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.summary-boxes div {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.summary-boxes small {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.summary-boxes strong {
+  font-size: 1.1rem;
+}
+
+.muted-text {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.tarot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.tarot-card {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  text-align: center;
+}
+
+.tarot-card span {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.tarot-card strong {
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  margin-bottom: 10px;
+}
+
+.tarot-card small {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.reading-box {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.reading-box.large {
+  min-height: 150px;
+}
+
+.lotto-box {
+  display: grid;
+  gap: 18px;
+}
+
+.lotto-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  min-height: 120px;
+}
+
+.lotto-ball {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold), var(--pink));
+  color: #171717;
+  box-shadow: 0 10px 25px rgba(255, 200, 87, 0.14);
+}
+
+.lotto-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.info-section {
+  padding-top: 28px;
+}
+
+.policy-box {
+  padding: 24px 22px;
+}
+
+.policy-box ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.ad-wrap {
+  padding-top: 28px;
+}
+
+.ad-box {
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(135,216,255,0.06), rgba(185,140,255,0.05));
+  border-radius: 18px;
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--muted);
+  padding: 18px;
+}
+
+.ad-label {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 30px;
+  background: rgba(10, 15, 25, 0.75);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .feature-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 0;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .summary-boxes,
+  .pillar-grid,
+  .tarot-grid {
+    grid-template-columns: 1fr;
+  }
+}
